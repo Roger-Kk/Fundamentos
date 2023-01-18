@@ -35,9 +35,9 @@ console.log('Day 01 - FIM'+'\n');
 //=================================================================================================
 
 //Day 02
-/*OBS: para executar comando prompt() de input de dados em node.js use o comando "npm install prompt-sync"
+/*OBS: Em caso de erro: 'prompt not defined' Faça: para executar comando prompt() de input de dados em node.js use o comando "npm install prompt-sync"
 
-Perguntar dados: 
+Desafio 2. Perguntar dados: 
 - Qual o seu nome?
 - Quantos anos você tem?
 - Qual linguagem de programação você está estudando?
@@ -50,10 +50,10 @@ var prompt = require('prompt-sync');
 var prompt = prompt();
 
 var nome = prompt('Qual o seu nome?');
-var idade = prompt('Quantos anos você tem? Hein?');
+var idade = prompt('Quantos anos você tem?');
 var linguagem = prompt('Qual linguagem de programaçaõ você está estudando?');
 
-console.log('Olá ' + nome + ', você tem '+ idade +' anos e já está aprendendo '+ linguagem +'!');
+console.log('Entendi. Então você se chama ' + nome + ', tem '+ idade +' anos e já está aprendendo '+ linguagem +'. Massa!' + '\n');
 
 //EXTRA: 
 /*
@@ -69,7 +69,7 @@ var perg = prompt('Você gosta de estudar ' + linguagem  + '?  Responda com o n�
 if(perg == 1){
 console.log('Muito bom! Continue estudando e você terá muito sucesso.');
 }
-if(perg ==2){
+else if(perg ==2){
     var pergFim = prompt('Ahh que pena... Já tentou aprender outras linguagens?');
     console.log('Que tanso!' + '\n');
   } 
@@ -83,7 +83,53 @@ console.log('Day 02 - FIM'+'\n'+ '\n');
 
 //Day 03
 /*
-Jogo de decisões através de input de dados do usuário. 
+Desafio: Jogo de decisões através de input de dados do usuário. 
 */
+console.log('\n' + 'Day 03 - INÍCIO: ');
+
+var perg1 = prompt('Você quer seguir para Front-End ou Back-End?, Responda com:  1 - Front-End, 2 - Back-End.');
+var perg2 = '';
+
+if(perg1==1){
+  perg2 = prompt('Quer aprender REACT ou VUE?');
+}
+else if(perg1==2){
+  perg2 = prompt('Quer aprender C# ou JAVA?');
+}
+else{
+  perg2 = linguagem;
+  console.log('Era para responder apenas 1 ou 2.')
+}
+var perg3 = prompt('Pretende seguir atuando em '+ perg2 + '? Ou gostaria de ser FullStack?');
+
+var perg4 = prompt('Qual tecnologia que você gostaria de se especializar?');
+var tecnologias = [];
+tecnologias.push(perg4);
+
+var perg5 = prompt('Tem mais alguma tecnologia que você gostaria de aprender? Responda 1 - SIM, 2 - NÃO.');
+
+if(perg5==1){
+  var perg6 = prompt('Qual?');
+  tecnologias.push(perg6)
+  perg5 = prompt('Tem mais alguma tecnologia que você gostaria de aprender? Responda 1 - SIM, 2 - NÃO.');
+  while(perg5 == 1){
+    var perg6 = prompt('Qual?');
+    tecnologias.push(perg6);
+    perg5 = prompt('Tem mais alguma tecnologia que você gostaria de aprender? Responda 1 - SIM, 2 - NÃO.');
+  }
+  console.log('Legal. Boa sorte com os estudos em '+ tecnologias + '.'); 
+}
+else if(perg5==2){
+ console.log('Legal. Boa sorte com os estudos em '+ tecnologias + '.'); 
+} 
+else{
+  console.log('Legal. Boa sorte com os estudos em '+ tecnologias + '.');
+}
+
+console.log('Day 03 - FIM'+'\n'+ '\n'); 
+
+//================================================================================================
+
+
 
 
